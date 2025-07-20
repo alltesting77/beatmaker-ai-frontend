@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 
-export function BeatForm({ userPlan, onGenerate }) {
+type UserPlan = {
+  name: string;
+  allowedStyles: string[];
+  durations: number[];
+  qualities: string[];
+};
+
+type BeatFormProps = {
+  userPlan: UserPlan;
+  onGenerate: (params: { bpm: number; style: string; duration: number; quality: string }) => void;
+};
+
+export function BeatForm({ userPlan, onGenerate }: BeatFormProps) {
   const [bpm, setBpm] = useState(90);
   const [style, setStyle] = useState(userPlan.allowedStyles[0]);
   const [duration, setDuration] = useState(userPlan.durations[0]);
