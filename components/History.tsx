@@ -1,4 +1,21 @@
-export function History({ generations }) {
+type Generation = {
+  id: string;
+  createdAt: string;
+  params: {
+    style: string;
+    bpm: number;
+    duration: number;
+    quality: string;
+  };
+  fileUrl: string;
+  licenseUrl?: string;
+};
+
+type HistoryProps = {
+  generations: Generation[];
+};
+
+export function History({ generations }: HistoryProps) {
   if (!generations.length) return <p>История пуста.</p>;
   return (
     <ul>
