@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -11,6 +12,9 @@ export default function Signup() {
         <input placeholder="Пароль" type="password" value={password} onChange={e => setPassword(e.target.value)} />
         <button>Зарегистрироваться</button>
       </form>
+      <p style={{ marginTop: 16 }}>
+        Уже есть аккаунт? <Link href="/login">Войти</Link>
+      </p>
     </main>
   );
 }
