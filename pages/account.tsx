@@ -1,8 +1,8 @@
-import { History } from '../components/History';
-import { PlanBadge } from '../components/PlanBadge';
+import { History } from "../components/History";
+import { PlanBadge } from "../components/PlanBadge";
 
-export default function Account() {
-  // Заглушка: история генераций и текущий план
+export default function Account({ user }) {
+  // Моки
   const generations = [
     {
       id: "1",
@@ -21,7 +21,6 @@ export default function Account() {
         Ваш тариф: <PlanBadge plan={userPlan.name} />
       </div>
       <History generations={generations} />
-      {/* Кнопка для апгрейда плана */}
       <button style={{ marginTop: 24 }}>Перейти на Plus/Pro</button>
     </main>
   );
