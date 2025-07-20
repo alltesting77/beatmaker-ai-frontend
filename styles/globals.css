@@ -6,6 +6,8 @@ body {
 }
 main {
   padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 input, select, button {
   font-size: 16px;
@@ -16,7 +18,11 @@ button {
   color: #fff;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 button:disabled {
   background: #bbb;
+}
+nav a {
+  text-decoration: none;
 }
