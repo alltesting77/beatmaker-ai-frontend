@@ -1,7 +1,15 @@
 import { History } from "../components/History";
 import { PlanBadge } from "../components/PlanBadge";
 
-export default function Account({ user }) {
+type User = {
+  email: string;
+} | null;
+
+type AccountProps = {
+  user: User;
+};
+
+export default function Account({ user }: AccountProps) {
   // Моки
   const generations = [
     {
