@@ -1,1 +1,22 @@
-
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f8f9fa;
+  color: #232323;
+}
+main {
+  padding: 32px;
+}
+input, select, button {
+  font-size: 16px;
+  padding: 6px 10px;
+}
+button {
+  background: #06c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+button:disabled {
+  background: #bbb;
+}
