@@ -1,6 +1,14 @@
 import Link from "next/link";
 
-export function NavBar({ user }) {
+type User = {
+  email: string;
+} | null;
+
+type NavBarProps = {
+  user: User;
+};
+
+export function NavBar({ user }: NavBarProps) {
   return (
     <nav style={{
       display: "flex",
