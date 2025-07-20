@@ -1,0 +1,28 @@
+import { History } from '../components/History';
+import { PlanBadge } from '../components/PlanBadge';
+
+export default function Account() {
+  // Заглушка: история генераций и текущий план
+  const generations = [
+    {
+      id: "1",
+      createdAt: "2025-07-20",
+      params: { style: "Hip-Hop", bpm: 90, duration: 15, quality: "mp3" },
+      fileUrl: "#",
+      licenseUrl: "#",
+    }
+  ];
+  const userPlan = { name: "Free" };
+
+  return (
+    <main>
+      <h1>Личный кабинет</h1>
+      <div>
+        Ваш тариф: <PlanBadge plan={userPlan.name} />
+      </div>
+      <History generations={generations} />
+      {/* Кнопка для апгрейда плана */}
+      <button style={{ marginTop: 24 }}>Перейти на Plus/Pro</button>
+    </main>
+  );
+}
