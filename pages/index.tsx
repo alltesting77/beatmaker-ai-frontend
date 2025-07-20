@@ -1,6 +1,13 @@
 import { BeatForm } from '../components/BeatForm';
 import { PlanBadge } from '../components/PlanBadge';
 
+type GenerateParams = {
+  bpm: number;
+  style: string;
+  duration: number;
+  quality: string;
+};
+
 export default function Home() {
   // Заглушка: текущий план и user
   const userPlan = {
@@ -10,7 +17,7 @@ export default function Home() {
     qualities: ["mp3"],
   };
 
-  const handleGenerate = (params) => {
+  const handleGenerate = (params: GenerateParams) => {
     // TODO: обработка генерации (API)
     alert(`Генерация: ${JSON.stringify(params)}`);
   };
