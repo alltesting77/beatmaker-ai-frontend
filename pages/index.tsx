@@ -1,32 +1,15 @@
-import { BeatForm } from '../components/BeatForm';
-import { PlanBadge } from '../components/PlanBadge';
-
-type GenerateParams = {
-  bpm: number;
-  style: string;
-  duration: number;
-  quality: string;
-};
+import Link from "next/link";
 
 export default function Home() {
-  // Заглушка: текущий план и user
-  const userPlan = {
-    name: "Free",
-    allowedStyles: ["Hip-Hop", "Trap", "Pop"],
-    durations: [15],
-    qualities: ["mp3"],
-  };
-
-  const handleGenerate = (params: GenerateParams) => {
-    // TODO: обработка генерации (API)
-    alert(`Генерация: ${JSON.stringify(params)}`);
-  };
-
   return (
     <main>
       <h1>AI Битмейкер</h1>
-      <PlanBadge plan={userPlan.name} />
-      <BeatForm userPlan={userPlan} onGenerate={handleGenerate} />
+      <p>Создавай уникальные биты за секунды. Быстро. Просто. Интеллектуально.</p>
+      <Link href="/generate">
+        <button style={{ marginTop: 20, fontSize: 18, padding: "12px 32px" }}>
+          Попробовать генератор
+        </button>
+      </Link>
     </main>
   );
 }
