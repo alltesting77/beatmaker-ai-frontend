@@ -1,5 +1,12 @@
 import { BeatForm } from "../components/BeatForm";
 
+type GenerateParams = {
+  bpm: number;
+  style: string;
+  duration: number;
+  quality: string;
+};
+
 export default function GeneratePage() {
   // можно получить userPlan из props/useAuth
   const userPlan = {
@@ -9,7 +16,7 @@ export default function GeneratePage() {
     qualities: ["mp3"],
   };
 
-  const handleGenerate = (params) => {
+  const handleGenerate = (params: GenerateParams) => {
     // TODO: отправить запрос на backend
     alert(`Генерируется бит с параметрами: ${JSON.stringify(params)}`);
   };
